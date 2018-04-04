@@ -1,0 +1,40 @@
+group 'com.xwolf'
+version '1.0-SNAPSHOT'
+
+apply plugin:'java'
+apply plugin:'idea'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories{
+    mavenCentral()
+    mavenLocal()
+}
+
+sourceSets{
+    main{
+        java {
+            srcDirs = ['src/scala']
+        }
+    }
+
+    test {
+        java{
+            srcDirs = ["src/test"]
+        }
+    }
+}
+
+dependencies{
+    testCompile group: 'org.scalatest', name: 'scalatest_2.12', version: '3.2.0-SNAP10'
+
+    testCompile group: 'org.scalacheck', name: 'scalacheck_2.12', version: '1.13.5'
+
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.4'
+
+    compile group: 'org.scala-lang', name: 'scala-compiler', version: '2.12.4'
+
+
+
+}
